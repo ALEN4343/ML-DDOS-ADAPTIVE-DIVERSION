@@ -1,0 +1,36 @@
+pps (Packets Per Second):
+Number of packets transmitted per second in a network flow.
+High pps often indicates flooding behavior in DDoS attacks.
+
+bps (Bytes Per Second):
+Amount of data transmitted per second in a flow.
+Abnormally high bps may indicate bandwidth exhaustion attacks.
+
+flow_duration:
+Total time duration of the network flow.
+DDoS flows are often very short and repetitive.
+
+syn_rate:
+Number of TCP SYN packets per second.
+High SYN rate is a strong indicator of SYN flood attacks.
+
+ack_ratio:
+Ratio of ACK packets to SYN packets.
+Low ACK ratio indicates incomplete TCP handshakes (attack behavior).
+
+ttl_deviation:
+Standard deviation of IP TTL values in a flow.
+Large deviation may indicate spoofed or distributed sources.
+
+entropy:
+Entropy of packet sizes within a flow.
+Higher entropy suggests random, automated traffic patterns.
+
+repetition:
+Ratio indicating repeated packet sizes.
+High repetition is common in bot-generated traffic.
+
+label:
+Target class label.
+0 = Normal traffic
+1 = DDoS attack traffic
