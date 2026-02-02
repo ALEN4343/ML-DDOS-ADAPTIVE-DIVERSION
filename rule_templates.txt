@@ -1,0 +1,10 @@
+# ALLOW traffic
+iptables -A FORWARD -s <SRC_IP> -j ACCEPT
+
+# DIVERT traffic to dummy server
+ip route add <TARGET_IP> via <DUMMY_SERVER_IP>
+
+# BLOCK + RATE LIMIT traffic
+iptables -A INPUT -s <SRC_IP> -m limit --limit 10/sec --limit-burst 20 -j ACCEPT
+iptables -A INPUT -s <SRC_IP> -j DROP
+
